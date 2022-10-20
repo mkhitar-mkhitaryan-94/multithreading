@@ -1,4 +1,4 @@
-package threads;
+package func.base;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;

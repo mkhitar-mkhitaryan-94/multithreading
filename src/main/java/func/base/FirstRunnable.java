@@ -1,4 +1,4 @@
-package threads;
+package func.base;
 
 public class FirstRunnable implements Runnable {
     @Override

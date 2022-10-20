@@ -1,26 +1,24 @@
-package threads;
+package func.base;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
-public class FirstThread extends Thread {
-    public FirstThread(String name) {
-        super(name);
-    }
-
+public class FirstCallable implements Callable<Integer> {
     @Override
-    public void run() {
+    public Integer call()  {
         List<Integer> list = ThreadMain.integers;
         int sum = 0;
         for (int element : list) {
-            sum += element;
+            sum += element + 1;
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
         }
         System.out.println(Thread.currentThread().getName());
         System.out.println("sum = " + sum);
+        return sum;
     }
-}
+    }
+
